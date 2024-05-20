@@ -44,6 +44,12 @@ class PedometerFragment : Fragment(), SensorEventListener {
         resetSteps()
         sensorManager = requireContext().getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
+        // Log the available sensors
+        val deviceSensors: List<Sensor> = sensorManager!!.getSensorList(Sensor.TYPE_ALL)
+        deviceSensors.forEach { sensor ->
+            Log.d("PedometerFragment", "Sensor: ${sensor.name}, Type: ${sensor.type}")
+        }
+
         binding.circularProgressBar.apply {
             progress = 65f
             setProgressWithAnimation(65f, 1000)
@@ -55,7 +61,8 @@ class PedometerFragment : Fragment(), SensorEventListener {
             backgroundProgressBarColor = Color.GRAY
             backgroundProgressBarColorStart = Color.WHITE
             backgroundProgressBarColorEnd = Color.RED
-            backgroundProgressBarColorDirection = CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
+            backgroundProgressBarColorDirection =
+                CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
             progressBarWidth = 7f
             backgroundProgressBarWidth = 3f
             roundBorder = true
@@ -77,7 +84,11 @@ class PedometerFragment : Fragment(), SensorEventListener {
         running = true
         val stepSensor = sensorManager?.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
         if (stepSensor == null) {
-            Toast.makeText(requireContext(), "No sensor detected on this device", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "No sensor detected on this device",
+                Toast.LENGTH_SHORT
+            ).show()
         } else {
             sensorManager?.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_UI)
         }
@@ -116,7 +127,8 @@ class PedometerFragment : Fragment(), SensorEventListener {
     }
 
     private fun saveData() {
-        val sharedPreferences = requireContext().getSharedPreferences("pedoData", Context.MODE_PRIVATE)
+        val sharedPreferences =
+            requireContext().getSharedPreferences("pedoData", Context.MODE_PRIVATE)
         with(sharedPreferences.edit()) {
             putFloat("step", previousTotalSteps)
             apply()
@@ -124,7 +136,8 @@ class PedometerFragment : Fragment(), SensorEventListener {
     }
 
     private fun loadData() {
-        val sharedPreferences = requireContext().getSharedPreferences("pedoData", Context.MODE_PRIVATE)
+        val sharedPreferences =
+            requireContext().getSharedPreferences("pedoData", Context.MODE_PRIVATE)
         val savedNumber = sharedPreferences.getFloat("step", 0f)
         Log.d("PedometerFragment", "$savedNumber")
         previousTotalSteps = savedNumber
