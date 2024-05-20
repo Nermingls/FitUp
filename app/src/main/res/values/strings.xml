@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NSAPP</string>
+    <string name="button_continue">Continue</string>
+    <string name="onboarding_title1">Experience the Future</string>
+    <string name="onboarding_body1">Next Gen AI Motion</string>
+    <string name="splash_header">AI Video Creator</string>
+    <string name="splash_promt1">A tranquil,realistic depiction of a sunset over calm japanese zen garden and koi pond</string>
+    <string name="splash_promt2">A man in a cloak disappearing into a sandstorm on a desert-like planet at sunset_</string>
+
+    <string name="terms_header">Terms of Use and Privacy Policy</string>
+    <string name="terms_description">Please accept the Terms of Use and Privacy Policy to continue</string>
+    <string name="terms_button1">I have read understood and accept the Privacy Policy</string>
+    <string name="terms_button2">I have read understood and accept the Terms of Use</string>
+    <string name="inspire">inspire me</string>
+
+    <string name="promt_edit_text">Enter a Promt Here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

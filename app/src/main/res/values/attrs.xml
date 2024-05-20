@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="textAppearanceH1" format="reference"/>
+    <attr name="textAppearanceH2" format="reference"/>
+    <attr name="textAppearanceH3" format="reference"/>
+    <attr name="textAppearanceH4" format="reference"/>
+    <attr name="textAppearanceH5" format="reference"/>
+    <attr name="textAppearanceH6" format="reference"/>
+    <attr name="textAppearanceBodyXLarge" format="reference"/>
+    <attr name="textAppearanceBodyLarge" format="reference"/>
+    <attr name="textAppearanceBodyMedium" format="reference"/>
+    <attr name="textAppearanceBodySmall" format="reference"/>
+    <attr name="textAppearanceBodyXSmall" format="reference"/>
+
+    <attr name="colorPrimary" format="reference|color">#FFFFFF</attr>
+    <attr name="colorError" format="reference|color"/>
+    <attr name="colorBorder" format="reference|color"/>
+</resources>

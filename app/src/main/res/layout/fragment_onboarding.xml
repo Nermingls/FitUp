@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".onboarding.OnboardingFragment"
+    >
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/background_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="-3dp"
+        app:auto_show="false"
+        app:keep_content_on_player_reset="true"
+        app:resize_mode="zoom"
+        app:show_buffering="never"
+        app:surface_type="texture_view"
+        app:use_controller="false" >
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_onboarding_page" />
+    </androidx.media3.ui.PlayerView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView"
+            android:layout_width="325dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="12dp"
+            android:textAppearance="?textAppearanceHeadlineLarge"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/materialTextView3"
+            app:layout_constraintEnd_toEndOf="@+id/materialTextView3"
+            app:layout_constraintStart_toStartOf="@+id/materialTextView3" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView3"
+            android:layout_width="325dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="12dp"
+            android:textAppearance="?textAppearanceHeadlineMedium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/filledButton"
+            app:layout_constraintEnd_toEndOf="@+id/filledButton"
+            app:layout_constraintStart_toStartOf="@+id/filledButton" />
+
+        <Button
+            android:id="@+id/filledButton"
+            android:layout_width="325dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="80dp"
+            android:paddingBottom="4dp"
+            android:text="continue"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
