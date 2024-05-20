@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "984112041878",
+    "project_id": "fitup-a467d",
+    "storage_bucket": "fitup-a467d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984112041878:android:85d8ea0e592a279fb9d7b7",
+        "android_client_info": {
+          "package_name": "dev.nermingules.nsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtpE4tSsKCuK1QivUCYc0Hb4GAQtfT1Ig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

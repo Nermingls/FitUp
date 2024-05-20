@@ -10,16 +10,23 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.nermingules.nsapp.base.BaseFragment
 import dev.nermingules.nsapp.databinding.FragmentHomePageBinding
+import dev.nermingules.nsapp.databinding.ItemCampaignsBinding
 import dev.nermingules.nsapp.exerciseDetail.ExerciseListViewModel
 
 class HomePageFragment  :  BaseFragment<FragmentHomePageBinding>(FragmentHomePageBinding::inflate) {
 
+    private val itemBinding = ItemCampaignsBinding::bind
     private val viewModel: ExerciseViewModel by viewModels()
     private val targetViewModel: TargetViewModel by viewModels()
     private val exerciseListViewModel: ExerciseListViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.pedometerArrow.setOnClickListener {
+            findNavController().navigate(HomePageFragmentDirections.openPedometer())
+
+        }
 
         // RecyclerView'un layout manager'ını belirleyin (yatay olarak)
         binding.productRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)

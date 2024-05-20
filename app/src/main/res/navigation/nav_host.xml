@@ -46,5 +46,13 @@
         <action
             android:id="@+id/openExercise"
             app:destination="@id/exerciseFragment" />
+        <action
+            android:id="@+id/openPedometer"
+            app:destination="@id/pedometerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/pedometerFragment"
+        android:name="dev.nermingules.nsapp.PedometerFragment"
+        android:label="fragment_pedometer"
+        tools:layout="@layout/fragment_pedometer" />
 </navigation>

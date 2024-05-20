@@ -8,10 +8,9 @@ import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import dev.nermingules.nsapp.base.BaseFragment
 import dev.nermingules.nsapp.databinding.FragmentOnboardingPageBinding
-
 class OnboardingPageFragment : BaseFragment<FragmentOnboardingPageBinding>(FragmentOnboardingPageBinding::inflate) {
 
-    private lateinit var player: Player
+    private var player: Player? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,22 +30,19 @@ class OnboardingPageFragment : BaseFragment<FragmentOnboardingPageBinding>(Fragm
     override fun onStart() {
         super.onStart()
         val videoUriString = arguments?.getString(ARGS_URI_KEY)
-        val videoUri = Uri.parse(videoUriString)
-        val mediaItem = MediaItem.fromUri(videoUri)
-        player.addMediaItem(mediaItem)
-        player.prepare()
-    }
-
-    override fun onStop() {
-        super.onStop()
-            player.release()
+        if (videoUriString != null) {
+            val videoUri = Uri.parse(videoUriString)
+            val mediaItem = MediaItem.fromUri(videoUri)
+            player?.addMediaItem(mediaItem)
+            player?.prepare()
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        player.release()
+        player?.release()
+        player = null
     }
-
 
     private fun initViews() {
         getUIArguments()?.let {
@@ -56,14 +52,11 @@ class OnboardingPageFragment : BaseFragment<FragmentOnboardingPageBinding>(Fragm
             binding.materialTextView2.text = it.description
             binding.materialTextView2.visibility = if (it.description.isNullOrEmpty()) View.GONE else View.VISIBLE
 
-
-            // Sayfanın "cardView" özelliğine sahip olup olmadığını kontrol et
             if (it.useCardView) {
                 binding.materialTextView.visibility = View.GONE
                 binding.materialTextView2.visibility = View.GONE
                 binding.materialCardView.visibility = View.VISIBLE
                 binding.cardText.text = it.description
-
             } else {
                 binding.materialTextView.visibility = View.VISIBLE
                 binding.materialCardView.visibility = View.GONE
@@ -79,11 +72,11 @@ class OnboardingPageFragment : BaseFragment<FragmentOnboardingPageBinding>(Fragm
         val videoUriString = arguments?.getString(ARGS_URI_KEY)
         val useCardView = arguments?.getBoolean(CARD_VIEW_KEY) ?: false
 
-        if (title != null || description != null || !videoUriString.isNullOrEmpty()) {
-            return OnboardingPageData(title, description, videoUriString, useCardView)
+        return if (title != null || description != null || !videoUriString.isNullOrEmpty()) {
+            OnboardingPageData(title, description, videoUriString, useCardView)
+        } else {
+            null
         }
-
-        return null
     }
 
     companion object {
