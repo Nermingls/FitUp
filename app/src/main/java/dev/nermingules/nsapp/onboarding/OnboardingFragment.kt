@@ -69,9 +69,9 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>(FragmentOnboa
     }
 
     private fun createPageData() = listOf(
-        OnboardingPageData(getString(R.string.onboarding_title1), getString(R.string.onboarding_body1), "file:///android_asset/1.mp4", false),
-        OnboardingPageData(null, null, "file:///android_asset/2.mp4", false),
-        OnboardingPageData(null, null, "file:///android_asset/3.mp4", false),
+        OnboardingPageData(getString(R.string.onboarding_title1), getString(R.string.onboarding_body1), "file:///android_asset/one.mp4", false),
+        OnboardingPageData(null, null, "file:///android_asset/two.mp4", false),
+        OnboardingPageData(null, null, "file:///android_asset/three.mp4", false),
     )
 
 }
