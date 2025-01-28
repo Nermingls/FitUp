@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".home.HomePageFragment">
+    tools:context=".ui.home.HomePageFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,26 +26,26 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="24dp" />
-
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/app_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Goto Pedometer"
-            android:textAppearance="@style/TextAppearance.App.Headline4"
-            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            android:layout_marginVertical="16dp"
+            android:includeFontPadding="false"
+            android:text="MEDICONNECT"
+            android:textAppearance="?textAppearanceHeadlineSmall"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/pedometer_arrow"
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/top_barrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/app_name"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline"
-            app:layout_constraintTop_toTopOf="@id/app_name" />
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="app_name" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/product_recycler"
@@ -56,7 +56,7 @@
             android:orientation="horizontal"
             android:paddingHorizontal="18dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/app_name"
+            app:layout_constraintTop_toBottomOf="@id/top_barrier"
             tools:layout_editor_absoluteX="0dp"
             tools:listitem="@layout/card_exercise_preview" />
 
@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="catagories_title"
+            android:text="Exersize Body Part"
             android:textAppearance="@style/TextAppearance.App.Headline4"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
             app:layout_constraintTop_toBottomOf="@id/campaings_layout" />

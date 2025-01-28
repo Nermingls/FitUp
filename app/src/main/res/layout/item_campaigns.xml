@@ -5,55 +5,335 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/green"
     app:cardElevation="8dp"
-    android:onClick="pedometre"
     app:cardCornerRadius="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
         android:paddingVertical="16dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Healty Life"
-            android:textAppearance="@style/TextAppearance.App.Headline4"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@id/description"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/icon"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/urbanist_medium"
-            android:text="Healty Life"
-            android:textAppearance="@style/TextAppearance.App.Body.Small"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/icon"
-            app:layout_constraintTop_toBottomOf="@id/title" />
-
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="118dp"
-            android:layout_height="122dp"
-            android:src="@drawable/fitup"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/meal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginVertical="12dp"
+            android:elevation="8dp"
+            android:padding="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:strokeColor="@color/greyscale_400"
+            app:strokeWidth="2dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/meal_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/icmeal"
+                    app:layout_constraintBottom_toTopOf="@+id/mealtitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Rounded.16" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mealtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.App.Headline6"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Meal" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/drinkWater"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginVertical="12dp"
+            android:elevation="8dp"
+            android:padding="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/meal"
+            app:layout_constraintStart_toEndOf="@+id/meal"
+            app:layout_constraintTop_toTopOf="@+id/meal"
+            app:strokeColor="@color/greyscale_400"
+            app:strokeWidth="2dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/drinkWaterImg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/titledrinkWater"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Rounded.16"
+                    android:src="@drawable/waterbottle" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titledrinkWater"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textAppearance="@style/TextAppearance.App.Headline6"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Drink Water" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/medicines"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginVertical="12dp"
+            android:elevation="8dp"
+            android:padding="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/drinkWater"
+            app:layout_constraintStart_toEndOf="@+id/drinkWater"
+            app:layout_constraintTop_toTopOf="@+id/drinkWater"
+            app:strokeColor="@color/greyscale_400"
+            app:strokeWidth="2dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView android:id="@+id/medicinesImg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/titlemedicines"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Rounded.16"
+                    android:src="@drawable/medicine_3027557" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titlemedicines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textAppearance="@style/TextAppearance.App.Headline6"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Medicines" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/top_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="meal, drinkWater,medicines" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/social"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginVertical="12dp"
+            android:elevation="8dp"
+            android:padding="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/doctors"
+            app:layout_constraintEnd_toEndOf="@+id/medicines"
+            app:layout_constraintTop_toTopOf="@+id/doctors"
+            app:strokeColor="@color/greyscale_400"
+            app:strokeWidth="2dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/socialImg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/friends_1490408"
+                    app:layout_constraintBottom_toTopOf="@+id/titlesocial"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Rounded.16" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titlesocial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.App.Headline6"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Social" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/call"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginVertical="12dp"
+            android:elevation="8dp"
+            android:padding="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/doctors"
+            app:layout_constraintEnd_toStartOf="@+id/social"
+            app:layout_constraintStart_toEndOf="@+id/doctors"
+            app:layout_constraintTop_toTopOf="@+id/doctors"
+            app:strokeColor="@color/greyscale_400"
+            app:strokeWidth="2dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/callImg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/call"
+                    app:layout_constraintBottom_toTopOf="@+id/titlecall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Rounded.16" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titlecall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.App.Headline6"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Call" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/doctors"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginVertical="12dp"
+            android:elevation="8dp"
+            android:padding="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/meal"
+            app:layout_constraintTop_toTopOf="@+id/top_barrier"
+            app:strokeColor="@color/greyscale_400"
+            app:strokeWidth="2dp"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/doctorsImg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/icdoctors"
+                    app:layout_constraintBottom_toTopOf="@+id/titledoctor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Rounded.16" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titledoctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.App.Headline6"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Doctors" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

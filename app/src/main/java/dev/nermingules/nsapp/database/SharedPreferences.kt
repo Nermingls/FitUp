@@ -1,0 +1,60 @@
+package dev.nermingules.nsapp.database
+
+import android.content.Context
+import android.content.SharedPreferences
+import androidx.core.content.edit
+class SharedPreferences {
+
+    companion object {
+        private const val TimeRecipe = "timeRecipe"
+        private const val TimeExercise = "timeExercise"
+        const val Water = "water"
+
+        private var sharedPreferences: SharedPreferences? = null
+
+        @Volatile
+        private var instance: dev.nermingules.nsapp.database.SharedPreferences? = null
+
+        private val lock = Any()
+        operator fun invoke(context: Context): dev.nermingules.nsapp.database.SharedPreferences =
+            instance ?: synchronized(
+                lock
+            ) {
+                instance ?: createSharedPreference(context).also {
+                    instance = it
+                }
+            }
+
+        private fun createSharedPreference(context: Context): dev.nermingules.nsapp.database.SharedPreferences {
+            sharedPreferences =
+                androidx.preference.PreferenceManager.getDefaultSharedPreferences(context)
+            return SharedPreferences()
+        }
+
+    }
+
+    fun saveTimeRecipe(time: Long) {
+        sharedPreferences?.edit(commit = true) {
+            putLong(TimeRecipe, time)
+        }
+    }
+
+    fun getTimeRecipe() = sharedPreferences?.getLong(TimeRecipe, 0)
+
+    fun saveTimeExercise(time: Long) {
+        sharedPreferences?.edit(commit = true) {
+            putLong(TimeExercise, time)
+        }
+    }
+
+    fun getTimeExercise() = sharedPreferences?.getLong(TimeExercise, 0)
+
+    fun addWater(water: Int) {
+        sharedPreferences?.edit(commit = true) {
+            putInt(Water, water)
+        }
+    }
+
+    fun getWater() = sharedPreferences?.getInt(Water, 0)
+
+}

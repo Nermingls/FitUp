@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">NSAPP</string>
     <string name="button_continue">Continue</string>
-    <string name="onboarding_title1">Experience the Future</string>
-    <string name="onboarding_body1">Next Gen AI Motion</string>
-    <string name="splash_header">AI Video Creator</string>
+    <string name="onboarding_title1">Experience the Future Healt</string>
+    <string name="onboarding_body1">Next Gen of Applications</string>
+    <string name="splash_header">Your spacial assistans</string>
     <string name="splash_promt1">A tranquil,realistic depiction of a sunset over calm japanese zen garden and koi pond</string>
     <string name="splash_promt2">A man in a cloak disappearing into a sandstorm on a desert-like planet at sunset_</string>
 

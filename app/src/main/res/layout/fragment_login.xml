@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.register.LoginFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/x"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:includeFontPadding="false"
+        android:text="MEDICONNECT"
+        android:textAppearance="?textAppearanceHeadlineSmall"
+        android:textColor="?attr/colorOnBackground"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/user_name"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:minHeight="0dp"
+        android:text="PRO"
+        android:layout_marginVertical="16dp"
+        app:icon="@mipmap/ic_launcher"
+        app:iconTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/x"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toTopOf="@id/x"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
+        app:strokeColor="?attr/colorPrimaryFixed"
+        app:strokeWidth="1dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/top_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="user_name, x"
+        android:layout_marginVertical="10dp"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toBottomOf="@id/top_barrier"
+        android:hint="Enter Email"
+        android:layout_marginVertical="50dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?textAppearanceHeadlineSmall" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintTop_toBottomOf="@id/email_layout"
+        android:hint="Enter Password"
+        android:layout_marginVertical="50dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?textAppearanceHeadlineSmall" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_button"
+        style="?materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:includeFontPadding="false"
+        android:paddingVertical="12dp"
+        android:text="Login"
+        android:textColor="?attr/colorOnBackground"
+        app:icon="@drawable/common_google_signin_btn_icon_dark"
+        app:iconGravity="end"
+        android:layout_marginVertical="30dp"
+        app:iconTint="?attr/colorOnBackground"
+        app:layout_constraintTop_toBottomOf="@+id/password_layout"
+        app:layout_constraintEnd_toStartOf="@+id/singup_button"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:shapeAppearanceOverlay="?shapeAppearanceCornerMedium" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/singup_button"
+        style="?materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginStart="10dp"
+        android:includeFontPadding="false"
+        android:paddingVertical="12dp"
+        android:text="Sing Up"
+        android:textColor="?attr/colorOnBackground"
+        app:icon="@drawable/googleg_standard_color_18"
+        app:iconGravity="end"
+        app:iconTint="?attr/colorOnBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/login_button"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toEndOf="@+id/login_button"
+        app:layout_constraintTop_toTopOf="@+id/login_button"
+        app:shapeAppearanceOverlay="?shapeAppearanceCornerMedium" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,6 +26,10 @@
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
     </style>
+    <style name="CircleImageStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 
     <style name="Widget.App.Button.Icon.Back">
         <item name="icon">@drawable/round_arrow_back_ios_12</item>
@@ -124,33 +128,6 @@
 
 
 
-    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputEditText</item>
-        <item name="android:minWidth">300dp</item>
-
-        <item name="boxCornerRadiusBottomStart">12dp</item>
-        <item name="boxCornerRadiusTopStart">12dp</item>
-        <item name="boxCornerRadiusTopEnd">12dp</item>
-        <item name="boxCornerRadiusBottomEnd">12dp</item>
-
-        <item name="boxBackgroundColor">@color/greyscale_100</item>
-
-        <item name="boxStrokeWidth">0dp</item>
-        <item name="boxStrokeWidthFocused">0dp</item>
-
-        <item name="errorEnabled">false</item>
-        <item name="helperTextEnabled">false</item>
-
-        <item name="counterEnabled">true</item>
-        <item name="counterTextAppearance">@style/TextAppearance.App.Body.XSmall</item>
-        <item name="counterMaxLength">500</item>
-
-        <item name="hintEnabled">true</item>
-        <item name="android:textColorHint">@color/greyscale_500</item>
-        <item name="hintTextColor">@color/greyscale_100</item>
-        <item name="endIconTint">?android:textColorSecondary</item>
-    </style>
-
     <style name="ThemeOverlay.App.TextInputEditText" parent="">
         <item name="editTextStyle">@style/Widget.App.TextInputEditText</item>
         <item name="colorOnError">@color/color_primary</item>
@@ -169,6 +146,33 @@
 
     <style name="TextAppearance.App.TextInputEditText.Hint" parent="TextAppearance.App.Body.XLarge">
         <item name="fontFamily">@font/urbanist_bold</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputEditText</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxBackgroundColor">?colorSurfaceContainer</item>
+        <item name="android:textColorHint">?android:textColorSecondary</item>
+        <item name="hintTextColor">?android:textColorSecondary</item>
+        <item name="helperTextEnabled">false</item>
+    </style>
+    <style name="ThemeOverlay.App.TextInputEditText.Prompt" parent="">
+        <item name="editTextStyle">@style/Widget.App.TextInputEditText.Prompt</item>
+    </style>
+    <style name="Widget.App.TextInputEditText.Prompt" parent="Widget.App.TextInputEditText">
+        <item name="android:inputType">textMultiLine</item>
+    </style>
+    <style name="Widget.App.TextInputLayout.Prompt" parent="Widget.App.TextInputLayout">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputEditText.Prompt</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="errorEnabled">true</item>
+        <item name="counterEnabled">true</item>
+        <item name="counterMaxLength">300</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="hintEnabled">false</item>
     </style>
 
 </resources>

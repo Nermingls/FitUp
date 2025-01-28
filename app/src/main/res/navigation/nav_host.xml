@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/cameraFragment"
-        android:name="dev.nermingules.nsapp.camera.CameraFragment"
+        android:name="dev.nermingules.nsapp.ui.camera.CameraFragment"
         android:label="fragment_camera"
         tools:layout="@layout/fragment_camera" />
     <fragment
         android:id="@+id/splashFragment"
-        android:name="dev.nermingules.nsapp.onboarding.SplashFragment"
+        android:name="dev.nermingules.nsapp.ui.onboarding.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -21,16 +21,16 @@
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="dev.nermingules.nsapp.onboarding.OnboardingFragment"
+        android:name="dev.nermingules.nsapp.ui.onboarding.OnboardingFragment"
         android:label="fragment_onboarding"
         tools:layout="@layout/fragment_onboarding" >
         <action
-            android:id="@+id/openHome"
-            app:destination="@id/homePageFragment" />
+            android:id="@+id/action_onboardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseFragment"
-        android:name="dev.nermingules.nsapp.exerciseDetail.ExerciseFragment"
+        android:name="dev.nermingules.nsapp.ui.exerciseDetail.ExerciseFragment"
         android:label="fragment_exercise"
         tools:layout="@layout/fragment_exercise" >
         <argument
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/homePageFragment"
-        android:name="dev.nermingules.nsapp.home.HomePageFragment"
+        android:name="dev.nermingules.nsapp.ui.home.HomePageFragment"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" >
         <action
@@ -49,10 +49,133 @@
         <action
             android:id="@+id/openPedometer"
             app:destination="@id/pedometerFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_mealsFragment"
+            app:destination="@id/mealsFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_medicinesFragment"
+            app:destination="@id/medicinesFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_waterDrinkingFragment"
+            app:destination="@id/waterDrinkingFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_doctorsFragment"
+            app:destination="@id/doctorsFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_emergencyCallFragment"
+            app:destination="@id/emergencyCallFragment" />
     </fragment>
     <fragment
         android:id="@+id/pedometerFragment"
-        android:name="dev.nermingules.nsapp.PedometerFragment"
+        android:name="dev.nermingules.nsapp.ui.exerciseDetail.PedometerFragment"
         android:label="fragment_pedometer"
         tools:layout="@layout/fragment_pedometer" />
+    <fragment
+        android:id="@+id/mealsFragment"
+        android:name="dev.nermingules.nsapp.ui.meal.MealsFragment"
+        android:label="fragment_meals"
+        tools:layout="@layout/fragment_meals" >
+        <action
+            android:id="@+id/action_mealsFragment_to_addMealFragment"
+            app:destination="@id/addMealFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicinesFragment"
+        android:name="dev.nermingules.nsapp.ui.medicines.MedicinesFragment"
+        android:label="fragment_medicines"
+        tools:layout="@layout/fragment_medicines" >
+        <action
+            android:id="@+id/action_medicinesFragment_to_medicineAddFragment2"
+            app:destination="@id/medicineAddFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicineAddFragment2"
+        android:name="dev.nermingules.nsapp.ui.medicines.MedicineAddFragment"
+        android:label="fragment_medicine_add"
+        tools:layout="@layout/fragment_medicine_add" >
+        <action
+            android:id="@+id/action_medicineAddFragment2_to_medicinesFragment"
+            app:destination="@id/medicinesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMealFragment"
+        android:name="dev.nermingules.nsapp.meal.AddMealFragment"
+        android:label="fragment_add_meal"
+        tools:layout="@layout/fragment_add_meal" >
+        <action
+            android:id="@+id/action_addMealFragment_to_mealsFragment"
+            app:destination="@id/mealsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/waterDrinkingFragment"
+        android:name="dev.nermingules.nsapp.ui.water_drinking.WaterDrinkingFragment"
+        android:label="fragment_water_drinking"
+        tools:layout="@layout/fragment_water_drinking" >
+        <action
+            android:id="@+id/action_waterDrinkingFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="dev.nermingules.nsapp.ui.social.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_uploadFragment2"
+            app:destination="@id/uploadFragment2" />
+        <action
+            android:id="@+id/action_feedFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadFragment2"
+        android:name="dev.nermingules.nsapp.ui.social.UploadFragment"
+        android:label="fragment_upload"
+        tools:layout="@layout/fragment_upload" >
+        <action
+            android:id="@+id/action_uploadFragment2_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="dev.nermingules.nsapp.ui.register.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorsFragment"
+        android:name="dev.nermingules.nsapp.ui.doctors.DoctorsFragment"
+        android:label="fragment_doctors"
+        tools:layout="@layout/fragment_doctors" >
+        <action
+            android:id="@+id/action_doctorsFragment_to_addDoctorFragment"
+            app:destination="@id/addDoctorFragment" />
+        <action
+            android:id="@+id/action_doctorsFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDoctorFragment"
+        android:name="dev.nermingules.nsapp.ui.doctors.AddDoctorFragment"
+        android:label="fragment_add_doctor"
+        tools:layout="@layout/fragment_add_doctor" >
+        <action
+            android:id="@+id/action_addDoctorFragment_to_doctorsFragment"
+            app:destination="@id/doctorsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emergencyCallFragment"
+        android:name="dev.nermingules.nsapp.ui.emergencyCall.EmergencyCallFragment"
+        android:label="fragment_emergency_call"
+        tools:layout="@layout/fragment_emergency_call" />
+
 </navigation>
